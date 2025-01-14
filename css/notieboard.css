@@ -89,3 +89,11 @@ body{
 	padding-top: 50px;
 	color: white;
 }
+#test{
+	margin: 100px auto;
+	width:1200px;
+	height: auto;
+	border:1px solid;
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
