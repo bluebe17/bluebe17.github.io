@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../css/notieboard.css">
 <link rel="icon" href="../img/favicon.png">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <title>피지오닉스</title>
 </head>
 <body>
@@ -674,15 +675,16 @@
                 042-867-7880</span></p>
                 
                 </div>
-                <div id="test">
-                    <iframe src="noticeboard/test.html" width="100%" height="auto" style="border: none;"></iframe>
-                </div>
 
                 <div id="test">
-                    <iframe src="noticeboard/test.html" width="100%" height="1300px" style="border: none;"></iframe>
+                    <iframe class="test_iframe" src="noticeboard/test.html" width="100%" style="border: none;"></iframe>
                 </div>
 
-                
+                <div id="test1">
+                    
+                </div>
+
+
     </div>
 <!-- Footer -->
 	<div id="footer">
@@ -708,3 +710,15 @@ COPYRIGHT© 2024 PHYSIONICS. ALL RIGHT RESERVED.
 	</div>
 </body>
 </html>
+<script>
+    function adjustAllIframes() {
+        const iframes = document.querySelectorAll(".test_iframe");
+        iframes.forEach(iframe => {
+            iframe.onload = function () {
+                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+            };
+        });
+    }
+
+    adjustAllIframes();
+</script>
