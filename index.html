@@ -5,27 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>피지오닉스</title>
-    <link rel="icon" href="../img/favicon.png" type="favicon">
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <link rel="stylesheet" href="../css/news.css">
+    <link rel="icon" href="img/favicon.png" type="favicon">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
     <header class="header">
         <div class="logo">
-            <a href="../"><img src="../img/logo.png" alt="회사 로고"></a>
+            <a href="/"><img src="img/logo.png" alt="회사 로고"></a>
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="../">HOME</a></li>
-                <li><a href="../media/">MEDIA</a></li>
-                <li><a href="../specification/">SPECIFICATION</a></li>
-                <li class="current"><a href="../news/">NEWS</a></li>
-                <li><a href="../contact/">CONTACT</a></li>
+                <li class="current"><a href="/">HOME</a></li>
+                <li><a href="media/">MEDIA</a></li>
+                <li><a href="specification/">SPECIFICATION</a></li>
+                <li><a href="news/">NEWS</a></li>
+                <li><a href="contact/">CONTACT</a></li>
             </ul>
         </nav>
         <div class="header-icons">
@@ -33,18 +30,131 @@
             <a href="https://www.youtube.com/@Physionics-ld1tz" target="_blank" rel="noopener noreferrer" class="youtube-icon">YouTube</a>
         </div>
     </header>
-
     <main>
-        <section class="v-section">
-            <div id="noticeboard-div">
-                <h1>News</h1>
-                <div id="noticeboard-detail"></div>
-                <div id="loading" style="display: none;">
-                    <div class="spinner"></div>
-                </div>
-                <div id="pagination"></div>
-            </div>
+        <!-- 메인 이미지 추가 -->
+        <section class="main-image">
+            <img src="img/home_top.jpg" alt="회사 메인 이미지">
+        </section>
 
+        <!-- YouTube 영상 추가 -->
+        <section class="v-section">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VrK6S1Cr-LI?si=vcFoZS218CG_bD4q"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <!-- On-broad 추가 -->
+        <section class="v-section">
+            <div id="on-broad-div">
+                <img id="on-broad-img" src="img/on-broad.png" alt="On-broad 이미지">
+                <div id="on-broad-comment">
+                    <h1>On-broad Signal Processing Unit</h1>
+                    <ul>
+                        <li>integration technique for accommodation of the signal processing unit in the limited space like a robotic finger</li>
+                        <li>Readout IC for processing signals from array with built-in zero-potential method</li>
+                        <li>High-speed data processing technology (500 frame rate for 64 elements)</li>
+                    </ul>
+                    <img id="on-broad-img2" src="img/on-broad2.png" alt="On-broad 이미지2">
+                    <img id="on-broad-img3" src="img/on-broad3.png" alt="On-broad 이미지3">
+                </div>
+            </div>
+        </section>
+
+        <!-- Robot-Hand 추가 -->
+        <section class="v-section">
+            <div id="robot-hand-div">
+                <div id="robot-hand-comment">
+                    <p>CREATE THE NEW FUTURE MAKE A NEW VALUE DESIGN A NEW HUMAN-LIFE</p>
+                    <h1>Robot Hand with Fingertip and Area Sensor</h1>
+                    <ul>
+                        <li>Development of Object Grasping Ability Enhancement</li>
+                        <li>Technology using Planar Multimodal Tactile Sensor</li>
+                        <li>Development of Hybrid High-Performance Multimodal Electronic</li>
+                        <li>Skin Module using Finger-Type Sensor</li>
+                        <li>Development of Object Recognition Ability Enhancement</li>
+                        <li>Technology for Robots using Multimodal Electronic Skin and AI</li>
+                    </ul>
+                </div>
+                <img id="robot-hand-img" src="img/robot-hand.png">
+            </div>
+        </section>
+
+        <!-- High-Performance 추가 -->
+        <section class="v-section">
+            <div id="high-performance-div">
+                <h1>High-Performance Multimodal Electronic</h1>
+                <h1>Skin Sensor of Hybrid-Type and a Scalable</h1>
+                <h1>Module for Robot Manipulation</h1>
+                <img src="img/high-performance.png">
+            </div>
+        </section>
+
+        <!-- Haptic Measurement 추가 -->
+        <section class="v-section">
+            <div id="haptic-measurement">
+                <h1>Haptic Measurement Solution Platform</h1>
+                <p id="haptic-measurement-pTag">HAPTIC MEASUREMENT SOLUTION PLATFORM</p>
+
+                <!-- 컨테이너로 감싸서 그림과 글자를 가로로 배치 -->
+                <div class="measurement-container">
+                    <div class="measurement-item">
+                        <div id="data-acquisition-imgDiv">
+                            <img id="data-acquisition-img" src="img/data-acquisition.png">
+                        </div>
+                        <p>Data Acquisition</p>
+                    </div>
+                    <div class="measurement-item">
+                        <div id="analysis-imgDiv">
+                            <img id="analysis-img" src="img/analysis.png">
+                        </div>
+                        <p>Analysis</p>
+                    </div>
+                    <div class="measurement-item">
+                        <div id="signal-imgDiv">
+                            <img id="signal-img" src="img/signal.png">
+                        </div>
+                        <p>Signal Conditioning</p>
+                    </div>
+                    <div class="measurement-item">
+                        <div id="data-management-imgDiv">
+                            <img id="data-management-img" src="img/data-management.png">
+                        </div>
+                        <p>Data Management</p>
+                    </div>
+                    <div class="measurement-item">
+                        <div id="visualization-imgDiv">
+                            <img id="visualization-img" src="img/visualization.png">
+                        </div>
+                        <p>Visualization</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners 추가 -->
+        <section class="v-section">
+            <div id="partners-h1-div">
+                <h1>Partners</h1>
+                <div id="partners-img-div">
+                    <img src="img/partners1.png" onclick="window.open('https://www.kriss.re.kr/')">
+                    <img src="img/partners2.png" onclick="window.open('https://www.xn--6j1bv61ao2crl68hx2xo4a.org/')">
+                    <img src="img/partners3.png" onclick="window.open('https://www.etri.re.kr/intro.html')">
+                    <img src="img/partners4.png" onclick="window.open('https://www.intekplus.com/kr/index.asp')">
+                    <img src="img/partners5.png" onclick="window.open('https://haptics.or.kr/')">
+                    <img src="img/partners6.png" onclick="window.open('https://www.khu.ac.kr/kor/user/main/view.do')">
+                    <img src="img/partners7.png" onclick="window.open('https://www.dongguk.edu/main')">
+                    <img src="img/partners8.png" onclick="window.open('https://www.ajou.ac.kr/kr/index.do')">
+                    <img src="img/partners9.png" onclick="window.open('https://www.skku.edu/skku/index.do')">
+                    <img src="img/partners10.png" onclick="window.open('https://www.kimm.re.kr/')">
+                    <img src="img/partners11.png" onclick="window.open('https://www.kku.ac.kr/mbshome/mbs/wwwkr/index.do')">
+                    <img src="img/partners12.png" onclick="window.open('https://www.koses.or.kr/')">
+                    <img src="img/partners13.png" onclick="window.open('https://www.wonikrobotics.com/')">
+                    <img src="img/partners14.png" onclick="window.open('https://www.kyuh.ac.kr/')">
+                    <img src="img/partners15.png" onclick="window.open('https://www.hanbat.ac.kr/kor/')">
+                    <img src="img/partners16.png" onclick="window.open('https://www.djtp.or.kr/')">
+                </div>
+            </div>
         </section>
     </main>
 
@@ -69,181 +179,4 @@
         </div>
     </footer>
 </body>
-
 </html>
-<script>
-    const files = [
-        "20240813.html", "20240814.html", "20241001.html", "20241001_1.html", "20241001_2.html",
-        "20241001_3.html", "20241001_4.html", "20241105.html", "20241106.html", "20241113.html",
-        "20241113_1.html", "20241121.html", "20241121_1.html", "20241128.html", "20241128_1.html",
-        "20241128_2.html", "20241128_3.html", "20241206.html", "20241212.html", "20250122.html",
-        "20250122_1.html", "20240813.html", "20240814.html", "20241001.html", "20241001_1.html",
-        "20241001_2.html", "20241001_3.html", "20241001_4.html", "20241105.html", "20241106.html",
-        "20241113.html", "20241113_1.html", "20241121.html", "20241121_1.html", "20241128.html",
-        "20241128_1.html", "20241128_2.html", "20241128_3.html", "20241206.html", "20241212.html",
-        "20250122.html", "20250122_1.html"
-    ];
-
-    let currentIndex = 0; // 현재 로드된 파일의 인덱스
-    const reversedFiles = [...files].reverse();
-
-    function showLoading() {
-        const loadingDiv = document.getElementById("loading");
-        if (loadingDiv) {
-            loadingDiv.style.display = "flex"; // 로딩 표시
-        }
-
-        // 스크롤 잠금
-        document.body.style.overflow = "hidden"; // 로딩 중에 스크롤 잠금
-    }
-
-    // 로딩 인디케이터 숨기기
-    function hideLoading() {
-        const loadingDiv = document.getElementById("loading");
-        if (loadingDiv) {
-            loadingDiv.style.display = "none"; // 로딩 숨기기
-        }
-
-        // 스크롤 활성화
-        document.body.style.overflow = ""; // 로딩 완료 후 스크롤 활성화
-    }
-
-    // 파일을 5개씩 로드하는 함수
-    async function loadFiles(startIndex) {
-        showLoading(); // 로딩 표시
-
-        const parentDiv = document.getElementById("noticeboard-detail");
-        if (!parentDiv) {
-            console.error('id가 "noticeboard-detail"인 div를 찾을 수 없습니다.');
-            return;
-        }
-
-        const endIndex = Math.min(startIndex + 5, reversedFiles.length); // 배열 끝을 넘지 않도록 제한
-        for (let index = startIndex; index < endIndex; index++) {
-            try {
-                const response = await fetch(reversedFiles[index]);
-                const data = await response.text();
-
-                // 새로운 div 생성 (게시물의 내용)
-                const newDiv = document.createElement('div');
-                newDiv.id = `content${index + 1}`;
-                newDiv.classList.add("content_test");
-
-                // 날짜와 인덱스를 표시할 요소 생성 (newDiv 밖에 배치)
-                const infoDiv = document.createElement('div');
-                infoDiv.classList.add('info-header'); // 스타일을 추가할 수 있는 클래스
-
-                // 날짜 (파일 이름에서 날짜 추출)
-                const date = reversedFiles[index].split('.')[0]; // 파일 이름에서 확장자를 제거한 부분을 날짜로 사용
-                const year = date.slice(0, 4); // "2024"
-                const month = date.slice(4, 6); // "08"
-                const day = date.slice(6, 8); // "13"
-
-                // 날짜 형식 (yyyy. mm. dd)
-                const formattedDate = `${year}. ${month}. ${day}`; // 예: "2024. 08. 13"
-
-                const dateDiv = document.createElement('div');
-                dateDiv.classList.add('file-date');
-                dateDiv.innerText = formattedDate; // "2024. 08. 13"으로 출력
-
-                // 인덱스 (몇 번째 파일인지 표시)
-                const indexDiv = document.createElement('div');
-                indexDiv.classList.add('file-index');
-                indexDiv.innerText = `${index + 1}/${reversedFiles.length}`; // 예: 1/40
-
-                // 날짜와 인덱스를 infoDiv에 추가
-                infoDiv.appendChild(dateDiv);
-                infoDiv.appendChild(indexDiv);
-
-                // 날짜와 인덱스를 parentDiv에 추가 (newDiv 위에 표시)
-                parentDiv.appendChild(infoDiv);
-
-                // HTML 콘텐츠 추가 (게시물 내용)
-                newDiv.innerHTML += data;
-
-                // 부모 div에 새로운 게시물 추가
-                parentDiv.appendChild(newDiv);
-            } catch (error) {
-                console.log('HTML 파일 로드 오류:', error);
-            }
-        }
-
-        hideLoading(); // 파일 로드 완료 후 로딩 숨기기
-    }
-
-    // 페이지네이션 버튼 생성
-    function createPaginationButtons() {
-        const totalPages = Math.ceil(reversedFiles.length / 5); // 총 페이지 수
-        const paginationDiv = document.getElementById("pagination");
-        if (!paginationDiv) {
-            console.error('id가 "pagination"인 div를 찾을 수 없습니다.');
-            return;
-        }
-
-        // 페이지 수만큼 숫자 버튼 생성
-        for (let page = 0; page < totalPages; page++) {
-            const pageButton = document.createElement("button");
-            pageButton.innerText = page + 1;
-            pageButton.classList.add("pageButton");
-            pageButton.onclick = function () {
-                loadPage(page);
-                setActivePageButton(pageButton); // 클릭한 버튼에 활성화 스타일 적용
-            };
-
-            // hover 이벤트 추가 (마우스를 올렸을 때 스타일 변경)
-            pageButton.onmouseenter = function () {
-                pageButton.style.border = "1px solid #c0c0c0"; // hover 배경색
-            };
-            pageButton.onmouseleave = function () {
-                if (!pageButton.classList.contains("active")) {
-                    pageButton.style.border = ""; // 선택되지 않은 버튼은 기본 스타일로
-                }
-            };
-
-            paginationDiv.appendChild(pageButton);
-        }
-    }
-
-    // 특정 페이지 로드
-    function loadPage(pageNumber) {
-        currentIndex = pageNumber * 5;
-        document.getElementById("noticeboard-detail").innerHTML = ""; // 기존 콘텐츠 삭제
-        loadFiles(currentIndex);
-
-        setTimeout(function () {
-            window.scrollTo({
-                top: 0
-            });
-        }, 100); // 로딩 후 잠시 대기 후 스크롤 이동
-    }
-
-    // 클릭된 버튼에 스타일을 적용하여 활성화시키는 함수
-    function setActivePageButton(button) {
-        // 모든 버튼을 기본 스타일로 되돌리기
-        const allButtons = document.querySelectorAll("#pagination button");
-        allButtons.forEach(btn => {
-            btn.classList.remove("active"); // "active" 클래스 제거
-            btn.style.border = ""; // 배경색 초기화
-            btn.style.color = ""; // 글자 색 초기화
-        });
-
-        // 클릭된 버튼에 "active" 클래스와 스타일 적용
-        button.classList.add("active");
-        button.style.border = "1px solid #c0c0c0";
-        button.style.color = "red"; // 선택된 버튼 글자색
-        button.style.cursor = "default";
-    }
-
-    // 페이지 로드 시 초기 설정
-    window.onload = function () {
-        loadFiles(0); // 첫 번째 페이지 로드
-        createPaginationButtons(); // 숫자 버튼 생성
-
-        // 첫 번째 버튼을 자동으로 활성화
-        const firstButton = document.querySelector("#pagination button");
-        if (firstButton) {
-            setActivePageButton(firstButton); // 첫 번째 버튼에 활성화 스타일 적용
-        }
-    };
-
-</script>
