@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피지오닉스</title>
+    <link rel="icon" href="img/favicon.png" type="favicon">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/"><img src="img/logo.png" alt="회사 로고"></a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li class="current"><a href="/">HOME</a></li>
+                <li><a href="media/">MEDIA</a></li>
+                <li><a href="specification/">SPECIFICATION</a></li>
+                <li><a href="news/">NEWS</a></li>
+                <li><a href="contact/">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="https://blog.naver.com/physionics13" target="_blank" rel="noopener noreferrer" class="blog-icon">Blog</a>
+            <a href="https://www.youtube.com/@Physionics-ld1tz" target="_blank" rel="noopener noreferrer" class="youtube-icon">YouTube</a>
+        </div>
+    </header>
+    <main>
+        <!-- 메인 이미지 추가 -->
+        <section class="main-image">
+            <img src="img/home_top.jpg" alt="회사 메인 이미지">
+        </section>
+
+        <!-- YouTube 영상 추가 -->
+        <section class="v-section">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VrK6S1Cr-LI?si=vcFoZS218CG_bD4q"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <!-- On-broad 추가 -->
+        <section class="v-section">
+            <div id="on-broad-div">
+                <img id="on-broad-img" src="img/on-broad.png" alt="On-broad 이미지">
+                <div id="on-broad-comment">
+                    <h1>On-broad Signal Processing Unit</h1>
+                    <ul>
+                        <li>integration technique for accommodation of the signal processing unit in the limited space
+                            like a robotic finger</li>
+                        <li>Readout IC for processing signals from array with built-in zero-potential method</li>
+                        <li>High-speed data processing technology<br>
+                            (500 frame rate for 64 elements)</li>
+                    </ul>
+                    <img id="on-broad-img2" src="img/on-broad2.png" alt="On-broad 이미지2">
+                    <img id="on-broad-img3" src="img/on-broad3.png" alt="On-broad 이미지3">
+                </div>
+            </div>
+        </section>
+
+        <!-- Robot-Hand 추가 -->
+        <section class="v-section">
+            <div id="robot-hand-div">
+                <div id="robot-hand-comment">
+                    <p>CREATE THE NEW FUTURE MAKE A NEW VALUE DESIGN A NEW HUMAN-LIFE</p>
+                    <h1>Robot Hand with Fingertip and Area Sensor</h1>
+                    <ul>
+                        <li>Development of Object Grasping Ability Enhancement</li>
+                        <li>Technology using Planar Multimodal Tactile Sensor</li>
+                        <li>Development of Hybrid High-Performance Multimodal Electronic</li>
+                        <li>Skin Module using Finger-Type Sensor</li>
+                        <li>Development of Object Recognition Ability Enhancement</li>
+                        <li>Technology for Robots using Multimodal Electronic Skin and AI</li>
+                    </ul>
+                </div>
+                <img id="robot-hand-img" src="img/robot-hand.png">
+            </div>
+        </section>
+
+        <!-- High-Performance 추가 -->
+        <section class="v-section">
+            <div id="high-performance-div">
+                <h1>High-Performance Multimodal Electronic</h1>
+                <h1>Skin Sensor of Hybrid-Type and a Scalable</h1>
+                <h1>Module for Robot Manipulation</h1>
+                <img src="img/high-performance.png">
+            </div>
+        </section>
+
+        <!-- Haptic Measurement 추가 -->
+        <section class="v-section">
+            <div id="haptic-measurement">
+                <h1>Haptic Measurement Solution Platform</h1>
+                <p id="haptic-measurement-pTag">HAPTIC MEASUREMENT SOLUTION PLATFORM</p>
+
+                <!-- 컨테이너로 감싸서 그림과 글자를 가로로 배치 -->
+                <div class="measurement-container">
+                    <div class="measurement-item">
+                        <div id="data-acquisition-imgDiv">
+                            <img id="data-acquisition-img" src="img/data-acquisition.png">
+                        </div>
+                        <p>Data Acquisition</p>
+                    </div>
+                    <div class="measurement-item">
+                        <div id="analysis-imgDiv">
+                            <img id="analysis-img" src="img/analysis.png">
+                        </div>
+                        <p>Analysis</p>
+                    </div>
+                    <div class="measurement-item">
+                        <div id="signal-imgDiv">
+                            <img id="signal-img" src="img/signal.png">
+                        </div>
+                        <p>Signal Conditioning</p>
+                    </div>
+                    <div class="measurement-item">
+                        <div id="data-management-imgDiv">
+                            <img id="data-management-img" src="img/data-management.png">
+                        </div>
+                        <p>Data Management</p>
+                    </div>
+                    <div class="measurement-item">
+                        <div id="visualization-imgDiv">
+                            <img id="visualization-img" src="img/visualization.png">
+                        </div>
+                        <p>Visualization</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners 추가 -->
+        <section class="v-section">
+            <div id="partners-h1-div">
+                <h1>Partners</h1>
+                <div id="partners-img-div">
+                    <img src="img/partners1.png" onclick="window.open('https://www.kriss.re.kr/')">
+                    <img src="img/partners2.png" onclick="window.open('https://www.xn--6j1bv61ao2crl68hx2xo4a.org/')">
+                    <img src="img/partners3.png" onclick="window.open('https://www.etri.re.kr/intro.html')">
+                    <img src="img/partners4.png" onclick="window.open('https://www.intekplus.com/kr/index.asp')">
+                    <img src="img/partners5.png" onclick="window.open('https://haptics.or.kr/')">
+                    <img src="img/partners6.png" onclick="window.open('https://www.khu.ac.kr/kor/user/main/view.do')">
+                    <img src="img/partners7.png" onclick="window.open('https://www.dongguk.edu/main')">
+                    <img src="img/partners8.png" onclick="window.open('https://www.ajou.ac.kr/kr/index.do')">
+                    <img src="img/partners9.png" onclick="window.open('https://www.skku.edu/skku/index.do')">
+                    <img src="img/partners10.png" onclick="window.open('https://www.kimm.re.kr/')">
+                    <img src="img/partners11.png" onclick="window.open('https://www.kku.ac.kr/mbshome/mbs/wwwkr/index.do')">
+                    <img src="img/partners12.png" onclick="window.open('https://www.koses.or.kr/')">
+                    <img src="img/partners13.png" onclick="window.open('https://www.wonikrobotics.com/')">
+                    <img src="img/partners14.png" onclick="window.open('https://www.kyuh.ac.kr/')">
+                    <img src="img/partners15.png" onclick="window.open('https://www.hanbat.ac.kr/kor/')">
+                    <img src="img/partners16.png" onclick="window.open('https://www.djtp.or.kr/')">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer 추가 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Physiological Signal Processing & Measurement Solution, Tactile Sensor System for Sensitive Gripping
+                </p>
+                <p>AFE & ROIC Semiconductor Design, Research & Development Service</p>
+            </div>
+            <div class="footer-address">
+                <p><strong>Office :</strong> 406ho, IT Venture Town, 35, Techno 9-ro, Yuseong-gu, Daejeon, 34027,
+                    Republic of Korea</p>
+                <p><strong>Factory :</strong> 507ho, 27, Gohwa-ro 9beon-gil, Paldal-gu, Suwon-si, Gyeonggi-do, 16456,
+                    Republic of Korea</p>
+            </div>
+            <div class="footer-contact">
+                <p><strong>TEL :</strong> +82-42-867-7880</p>
+                <p><strong>FAX :</strong> +82-42-367-0886</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

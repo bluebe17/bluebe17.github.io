@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피지오닉스</title>
+    <link rel="icon" href="../img/favicon.png" type="favicon">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="../css/news.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="../"><img src="../img/logo.png" alt="회사 로고"></a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../">HOME</a></li>
+                <li><a href="../media/">MEDIA</a></li>
+                <li><a href="../specification/">SPECIFICATION</a></li>
+                <li class="current"><a href="../news/">NEWS</a></li>
+                <li><a href="../contact/">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="https://blog.naver.com/physionics13" target="_blank" rel="noopener noreferrer" class="blog-icon">Blog</a>
+            <a href="https://www.youtube.com/@Physionics-ld1tz" target="_blank" rel="noopener noreferrer" class="youtube-icon">YouTube</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="v-section">
+            <div id="noticeboard-div">
+                <h1>News</h1>
+                <div id="noticeboard-detail"></div>
+                <div id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                </div>
+                <div id="pagination"></div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer 추가 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Physiological Signal Processing & Measurement Solution, Tactile Sensor System for Sensitive Gripping
+                </p>
+                <p>AFE & ROIC Semiconductor Design, Research & Development Service</p>
+            </div>
+            <div class="footer-address">
+                <p><strong>Office :</strong> 406ho, IT Venture Town, 35, Techno 9-ro, Yuseong-gu, Daejeon, 34027,
+                    Republic of Korea</p>
+                <p><strong>Factory :</strong> 507ho, 27, Gohwa-ro 9beon-gil, Paldal-gu, Suwon-si, Gyeonggi-do, 16456,
+                    Republic of Korea</p>
+            </div>
+            <div class="footer-contact">
+                <p><strong>TEL :</strong> +82-42-867-7880</p>
+                <p><strong>FAX :</strong> +82-42-367-0886</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    const files = [
+        "20240813.html", "20240814.html", "20241001.html", "20241001_1.html", "20241001_2.html",
+        "20241001_3.html", "20241001_4.html", "20241105.html", "20241106.html", "20241113.html",
+        "20241113_1.html", "20241121.html", "20241121_1.html", "20241128.html", "20241128_1.html",
+        "20241128_2.html", "20241128_3.html", "20241206.html", "20241212.html", "20250122.html",
+        "20250122_1.html", "20240813.html", "20240814.html", "20241001.html", "20241001_1.html",
+        "20241001_2.html", "20241001_3.html", "20241001_4.html", "20241105.html", "20241106.html",
+        "20241113.html", "20241113_1.html", "20241121.html", "20241121_1.html", "20241128.html",
+        "20241128_1.html", "20241128_2.html", "20241128_3.html", "20241206.html", "20241212.html",
+        "20250122.html", "20250122_1.html"
+    ];
+
+    let currentIndex = 0; // 현재 로드된 파일의 인덱스
+    const reversedFiles = [...files].reverse();
+
+    function showLoading() {
+        const loadingDiv = document.getElementById("loading");
+        if (loadingDiv) {
+            loadingDiv.style.display = "flex"; // 로딩 표시
+        }
+
+        // 스크롤 잠금
+        document.body.style.overflow = "hidden"; // 로딩 중에 스크롤 잠금
+    }
+
+    // 로딩 인디케이터 숨기기
+    function hideLoading() {
+        const loadingDiv = document.getElementById("loading");
+        if (loadingDiv) {
+            loadingDiv.style.display = "none"; // 로딩 숨기기
+        }
+
+        // 스크롤 활성화
+        document.body.style.overflow = ""; // 로딩 완료 후 스크롤 활성화
+    }
+
+    // 파일을 5개씩 로드하는 함수
+    async function loadFiles(startIndex) {
+        showLoading(); // 로딩 표시
+
+        const parentDiv = document.getElementById("noticeboard-detail");
+        if (!parentDiv) {
+            console.error('id가 "noticeboard-detail"인 div를 찾을 수 없습니다.');
+            return;
+        }
+
+        const endIndex = Math.min(startIndex + 5, reversedFiles.length); // 배열 끝을 넘지 않도록 제한
+        for (let index = startIndex; index < endIndex; index++) {
+            try {
+                const response = await fetch(reversedFiles[index]);
+                const data = await response.text();
+
+                // 새로운 div 생성 (게시물의 내용)
+                const newDiv = document.createElement('div');
+                newDiv.id = `content${index + 1}`;
+                newDiv.classList.add("content_test");
+
+                // 날짜와 인덱스를 표시할 요소 생성 (newDiv 밖에 배치)
+                const infoDiv = document.createElement('div');
+                infoDiv.classList.add('info-header'); // 스타일을 추가할 수 있는 클래스
+
+                // 날짜 (파일 이름에서 날짜 추출)
+                const date = reversedFiles[index].split('.')[0]; // 파일 이름에서 확장자를 제거한 부분을 날짜로 사용
+                const year = date.slice(0, 4); // "2024"
+                const month = date.slice(4, 6); // "08"
+                const day = date.slice(6, 8); // "13"
+
+                // 날짜 형식 (yyyy. mm. dd)
+                const formattedDate = `${year}. ${month}. ${day}`; // 예: "2024. 08. 13"
+
+                const dateDiv = document.createElement('div');
+                dateDiv.classList.add('file-date');
+                dateDiv.innerText = formattedDate; // "2024. 08. 13"으로 출력
+
+                // 인덱스 (몇 번째 파일인지 표시)
+                const indexDiv = document.createElement('div');
+                indexDiv.classList.add('file-index');
+                indexDiv.innerText = `${index + 1}/${reversedFiles.length}`; // 예: 1/40
+
+                // 날짜와 인덱스를 infoDiv에 추가
+                infoDiv.appendChild(dateDiv);
+                infoDiv.appendChild(indexDiv);
+
+                // 날짜와 인덱스를 parentDiv에 추가 (newDiv 위에 표시)
+                parentDiv.appendChild(infoDiv);
+
+                // HTML 콘텐츠 추가 (게시물 내용)
+                newDiv.innerHTML += data;
+
+                // 부모 div에 새로운 게시물 추가
+                parentDiv.appendChild(newDiv);
+            } catch (error) {
+                console.log('HTML 파일 로드 오류:', error);
+            }
+        }
+
+        hideLoading(); // 파일 로드 완료 후 로딩 숨기기
+    }
+
+    // 페이지네이션 버튼 생성
+    function createPaginationButtons() {
+        const totalPages = Math.ceil(reversedFiles.length / 5); // 총 페이지 수
+        const paginationDiv = document.getElementById("pagination");
+        if (!paginationDiv) {
+            console.error('id가 "pagination"인 div를 찾을 수 없습니다.');
+            return;
+        }
+
+        // 페이지 수만큼 숫자 버튼 생성
+        for (let page = 0; page < totalPages; page++) {
+            const pageButton = document.createElement("button");
+            pageButton.innerText = page + 1;
+            pageButton.classList.add("pageButton");
+            pageButton.onclick = function () {
+                loadPage(page);
+                setActivePageButton(pageButton); // 클릭한 버튼에 활성화 스타일 적용
+            };
+
+            // hover 이벤트 추가 (마우스를 올렸을 때 스타일 변경)
+            pageButton.onmouseenter = function () {
+                pageButton.style.border = "1px solid #c0c0c0"; // hover 배경색
+            };
+            pageButton.onmouseleave = function () {
+                if (!pageButton.classList.contains("active")) {
+                    pageButton.style.border = ""; // 선택되지 않은 버튼은 기본 스타일로
+                }
+            };
+
+            paginationDiv.appendChild(pageButton);
+        }
+    }
+
+    // 특정 페이지 로드
+    function loadPage(pageNumber) {
+        currentIndex = pageNumber * 5;
+        document.getElementById("noticeboard-detail").innerHTML = ""; // 기존 콘텐츠 삭제
+        loadFiles(currentIndex);
+
+        setTimeout(function () {
+            window.scrollTo({
+                top: 0
+            });
+        }, 100); // 로딩 후 잠시 대기 후 스크롤 이동
+    }
+
+    // 클릭된 버튼에 스타일을 적용하여 활성화시키는 함수
+    function setActivePageButton(button) {
+        // 모든 버튼을 기본 스타일로 되돌리기
+        const allButtons = document.querySelectorAll("#pagination button");
+        allButtons.forEach(btn => {
+            btn.classList.remove("active"); // "active" 클래스 제거
+            btn.style.border = ""; // 배경색 초기화
+            btn.style.color = ""; // 글자 색 초기화
+        });
+
+        // 클릭된 버튼에 "active" 클래스와 스타일 적용
+        button.classList.add("active");
+        button.style.border = "1px solid #c0c0c0";
+        button.style.color = "red"; // 선택된 버튼 글자색
+        button.style.cursor = "default";
+    }
+
+    // 페이지 로드 시 초기 설정
+    window.onload = function () {
+        loadFiles(0); // 첫 번째 페이지 로드
+        createPaginationButtons(); // 숫자 버튼 생성
+
+        // 첫 번째 버튼을 자동으로 활성화
+        const firstButton = document.querySelector("#pagination button");
+        if (firstButton) {
+            setActivePageButton(firstButton); // 첫 번째 버튼에 활성화 스타일 적용
+        }
+    };
+
+</script>

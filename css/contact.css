@@ -1,0 +1,396 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* 로보토 폰트 적용 */
+}
+
+/* 기본 헤더 스타일 */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 좌우 정렬 */
+    padding: 18px 25px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* 로고 스타일 */
+.logo {
+    flex: 0 0 auto;
+    margin-left: 300px; /* 기본 화면에서는 오른쪽으로 이동 */
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* 네비게이션 바 스타일 */
+.navbar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* 네비게이션 중앙 정렬 */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    color: #777;
+}
+
+/* 현재 페이지 스타일 */
+.navbar > ul > li.current > a {
+    text-decoration: underline;
+    text-decoration-color: #b10000;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+}
+
+/* 헤더 아이콘 스타일 */
+.header-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 300px; /* 기본적으로 오른쪽 끝 정렬 */
+}
+
+.header-icons a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.header-icons a:visited, 
+.header-icons a:active, 
+.header-icons a:focus {
+    color: black; /* 선택 상태에서도 색상 유지 */
+    text-decoration: none;
+    outline: none; /* 포커스 테두리 제거 */
+}
+
+.header-icons img {
+    height: 30px;
+}
+
+footer {
+    background-color: #777; /* 배경색 */
+    color: white; /* 글자 색 */
+    padding: 20px;
+    text-align: center; /* 중앙 정렬 */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.footer-info p,
+.footer-address p,
+.footer-contact p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+footer strong {
+    font-weight: bold;
+}
+
+.v-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-div {
+    margin: 100px auto;
+    text-align: center;
+    width: 70%; /* 컨텐츠 영역의 크기 */
+}
+
+#contact-div h1 {
+    font-size: 41px;
+    font-weight: 400;
+}
+
+.images-container {
+    display: flex;
+    justify-content: space-between; /* Ensures space between items */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 20px; /* Adds space between the images */
+    margin: 100px auto;
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22%; /* Adjust width of each item to fit 4 items per row */
+}
+
+.image-item img {
+    max-width: 80%; /* Ensures images are responsive */
+    height: auto;
+}
+
+.image-item p {
+    margin-top: 10px; /* Adds spacing between image and text */
+    font-weight: bold;
+}
+#location iframe{
+    width: 100%;
+}
+
+
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (min-width: 1024px) and (max-width: 1920px) {
+    .logo {
+        margin-left: calc((100vw - 1024px) / 3); /* 1024px 이상부터 너비 증가에 따라 margin-left 조정 */
+    }
+
+    .header-icons {
+        margin-right: calc((100vw - 1024px) / 3); /* 1024px 이상부터 너비 증가에 따라 margin-right 조정 */
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* 좌우 정렬 */
+        padding: 15px 20px;
+    }
+
+    /* 로고 왼쪽 정렬 */
+    .logo {
+        margin-left: 0; /* 왼쪽 정렬 */
+    }
+
+    .logo img {
+        height: 45px; /* 로고 크기 약간 조정 */
+    }
+
+    /* 네비게이션 중앙 정렬 */
+    .navbar {
+        position: relative;
+        left: auto;
+        transform: none;
+        flex-grow: 1; /* 네비바가 가운데로 퍼지도록 설정 */
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        margin: 0 8px;
+    }
+
+    /* 아이콘 오른쪽 정렬 */
+    .header-icons {
+        margin-right: 0;
+        display: flex;
+        align-items: center; /* 위아래 중앙 정렬 */
+        justify-content: flex-end; /* 오른쪽 정렬 */
+        gap: 10px; /* 아이콘 사이 여백 */
+    }
+
+    .header-icons img {
+        height: 25px; /* 아이콘 크기 조정 */
+    }
+    
+    .navbar ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .navbar ul li a:hover {
+        color: #777;
+    }
+    
+    /* 현재 페이지 스타일 */
+    .navbar > ul > li.current > a {
+        text-underline-offset: 8px;
+    }
+
+    .images-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center the items */
+    }
+
+    .image-item {
+        width: 100%; /* Full width for each item */
+        margin-bottom: 20px; /* Adds space between stacked items */
+    }
+
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* 세로 배치 */
+        align-items: center; /* 중앙 정렬 */
+    }
+
+    /* 로고 중앙 정렬 */
+    .logo {
+        margin-left: 0; 
+        text-align: center;
+    }
+
+    /* 아이콘 오른쪽 정렬 (로고와 같은 높이) */
+    .header-icons {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: auto;
+        margin-top: -15px;
+    }
+
+    /* 네비게이션 바를 아래로 정렬 */
+    .navbar {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        margin: 5px 10px;
+    }
+
+    /* 모바일에서 .current 링크의 text-underline-offset 값 줄이기 */
+    .navbar>ul>li.current>a {
+        text-underline-offset: 8px;
+        /* 모바일에서는 8px로 줄임 */
+    }
+
+    #contact-div h1{
+        font-size: 33px;
+    }
+
+    .images-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center the items */
+    }
+
+    .image-item {
+        width: 100%; /* Full width for each item */
+        margin-bottom: 20px; /* Adds space between stacked items */
+    }
+}
+
+@media (max-width: 480px) {
+     header {
+        flex-direction: column; /* 헤더를 세로 정렬 */
+        align-items: center; /* 모든 요소 중앙 정렬 */
+        padding: 10px;
+    }
+
+    .logo {
+        margin-left: 0; /* 모바일에서는 중앙 정렬 */
+    }
+
+    .logo img {
+        height: 40px; /* 로고 크기 조정 */
+    }
+
+    /* 아이콘을 로고 오른쪽에 배치 */
+    .header-icons {
+        margin-right: 0;
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+        margin-top: -15px;
+    }
+
+    .header-icons a{
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    /* 네비게이션을 로고 아래 가로 정렬 */
+    .navbar {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: row; /* 가로 정렬 유지 */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        margin: 0 5px;
+    }
+
+    .navbar ul li a {
+        font-size: 11px;
+        padding: 12px 0;
+    }
+
+    /* 더 작은 화면에서 .current 링크의 text-underline-offset 값 줄이기 */
+    .navbar>ul>li.current>a {
+        text-underline-offset: 6px;
+        /* 더 작은 화면에서는 6px로 줄임 */
+    }
+
+    #contact-div h1{
+        font-size: 28px;
+    }
+
+    .images-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center the items */
+    }
+
+    .image-item {
+        width: 100%; /* Full width for each item */
+        margin-bottom: 20px; /* Adds space between stacked items */
+    }
+}
